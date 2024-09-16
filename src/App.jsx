@@ -2,6 +2,7 @@ import React from 'react'
 import bgVideo from './assets/cybersec-bg.mp4'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
+import Tools from './components/Tools/Tools'
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
         <Navbar />
         <Hero />
       </div>
+      {/* Tools Card Section */}
+      <Tools />
     </div>
   )
 }
