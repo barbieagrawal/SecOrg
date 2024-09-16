@@ -6,7 +6,7 @@ import Tools from './components/Tools/Tools'
 
 const App = () => {
   return (
-    <div>
+    <div className='bg-black'>
       <div className='h-[700px] relative'>
         <video
           autoPlay

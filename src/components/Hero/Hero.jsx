@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div className="h-full text-white relative">
+        <div className="h-full bg-black/20 text-white relative">
           <div className="h-full flex justify-center items-center p-4">
             <div className="container grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="text-white space-y-4 lg:pr-36">
@@ -19,8 +19,8 @@ const Hero = () => {
               <div></div>
             </div>
           </div>
-          <div className="absolute bottom-0 z-30 right-0 w-full bg-gradient-to-b from-transparent from-10% to-primary to-90% h-[20px] sm:h-[50px] md:[60px]"></div>
         </div>
-      );
-    };
-    export default Hero;
+  );
+};
+
+export default Hero;
