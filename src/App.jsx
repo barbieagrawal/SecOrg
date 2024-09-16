@@ -1,6 +1,7 @@
 import React from 'react'
 import bgVideo from './assets/cybersec-bg.mp4'
-
+import Navbar from './components/Navbar/Navbar'
+import Hero from './components/Hero/Hero'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <source src={bgVideo} type='video/mp4'/>
         </video>
         <Navbar />
+        <Hero />
       </div>
     </div>
   )

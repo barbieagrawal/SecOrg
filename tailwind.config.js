@@ -13,6 +13,11 @@ export default {
           sm: "2rem",
         },
       },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        blackopsone: ['Black Ops One', 'sans-serif'],
+        anonymouspro: ['Anonymous Pro', 'sans-serif'],
+      }
     },
   },
   plugins: [],
