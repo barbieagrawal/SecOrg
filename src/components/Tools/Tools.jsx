@@ -1,21 +1,21 @@
 import React from 'react'
 import wave from "../../assets/wave Gif.gif";
-import { FaReact} from 'react-icons/fa'
-import { FaShuttleSpace, FaSpaceAwesome } from "react-icons/fa6";
+import { FaCalculator} from 'react-icons/fa'
+import { FaGears, FaSpaceAwesome } from "react-icons/fa6";
 
 const ServiceData = [
   {
     title: "OWASP RISK CALCULATOR",
     description:
       "This is an OWASP Risk Calculator which follows the OWASP Risk Rating Methodology to calculate risk likelihood and impact.",
-    icon: <FaReact className="text-7xl" />,
+    icon: <FaCalculator className="text-7xl" />,
     aosDelay: "300",
   },
   {
     title: "PERSONALIZED PASSWORD MANAGER",
     description:
       "This is a password manager tool where you can store all your passwords from different websites in an encrypted form.",
-    icon: <FaShuttleSpace className="text-7xl" />,
+    icon: <FaGears className="text-7xl" />,
     aosDelay: "500",
   },
   {
