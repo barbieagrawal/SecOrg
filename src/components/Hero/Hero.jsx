@@ -10,10 +10,7 @@ const Hero = () => {
                   SECURE YOUR ORGANISATION
                 </h1>
                 <p data-aos="fade-up" data-aos-delay="300" className='font-anonymouspro'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ea
-                  dolorem eius accusamus beatae. Nulla quis beatae quo, possimus
-                  tempora similique dignissimos repellat aperiam veniam culpa
-                  consequatur repudiandae asperiores saepe.
+                Secorg is a powerful toolkit designed to help organizations safeguard their digital assets and mitigate security risks. With a focus on risk assessment and secure credential management, Secorg provides comprehensive tools to strengthen your organization’s defenses and ensure robust security practices. Take control of your security needs with solutions tailored to today’s evolving threats.
                 </p>
               </div>
               <div></div>

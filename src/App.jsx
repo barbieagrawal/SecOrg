@@ -3,6 +3,8 @@ import bgVideo from './assets/cybersec-bg.mp4'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Tools from './components/Tools/Tools'
+import AboutUs from './components/AboutUs/AboutUs'
+import OurMission from './components/OurMission/OurMission'
 
 const App = () => {
   return (
@@ -20,9 +22,9 @@ const App = () => {
         <Hero />
       </div>
       {/* Tools Card Section */}
-      <div className="relative z-10 bg-black">
       <Tools />
-      </div>
+      <AboutUs />
+      <OurMission />
     </div>
   )
 }
