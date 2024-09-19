@@ -14,7 +14,7 @@ const ServiceData = [
     link: "https://barbieagrawal.github.io/OWASP-RISK-CALC/",
   },
   {
-    title: "PERSONALIZED PASSWORD MANAGER",
+    title: "PASSWORD MANAGER",
     description:
       "This is a password manager tool where you can store all your passwords from different websites in an encrypted form.",
     icon: <FaGears className="text-7xl" />,
@@ -47,9 +47,8 @@ const Tools = () => {
                     className="min-h-[180px] flex flex-col justify-center items-center rounded-xl gap-2 bg-indigo-900/60 backdrop-blur-sm  text-white text-center text-2xl py-8 px-3 w-full lg:w-[300px] mx-auto"
                   >
                     {data.icon}
-                    <h1>{data.title}</h1>
-                    <p>{data.content}</p>
-                    <p className="text-sm">{data.description}</p>
+                    <h1 className='font-montserrat py-2'>{data.title}</h1>
+                    <p className="text-sm font-anonymouspro py-2">{data.description}</p>
                     <div className='py-3'></div>
                     <a href={data.link}>
                       <button className='text-white border-2 font-montserrat border-white text-lg px-5 py-1 transition duration-200 ease-in-out hover:bg-gray-800 hover:backdrop-blur-md'>
