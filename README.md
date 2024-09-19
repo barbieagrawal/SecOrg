@@ -1,9 +1,12 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # SecOrg
+
+Secorg is a powerful toolkit designed to help organizations safeguard their digital assets and mitigate security risks. With a focus on risk assessment and secure credential management, Secorg provides comprehensive tools to strengthen your organization’s defenses and ensure robust security practices.
+
+### Key Tools:
+
+- OWASP Risk Calculator
+- Passwords Manager
+
+### Tech Stack:
+
+- Front-end: ReactJS + TailwindCSS
