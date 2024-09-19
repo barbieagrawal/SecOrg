@@ -3,7 +3,7 @@ import aboutUsImg from "../../assets/ourMissionImg.jpg"
 
 const OurMission = () => {
   return (
-    <div className='bg-black text-white pb-12 relative z-50'>
+    <div id="our-mission" className='bg-black text-white pb-12 relative z-50'>
         <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
                 <div className='space-y-3 xl:pr-36 p-4 border-l-2 border-b-2 border-l-indigo-800'>

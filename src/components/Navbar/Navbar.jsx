@@ -10,19 +10,19 @@ const Navbar = () => {
                     <img src={Logo} alt="" className='w-12'/>
                     <span className='font-blackopsone'>SECORG</span>
                 </div>
-                <div className='text-white font-montserrat'>
+                <div className='text-white hidden md:block font-montserrat'>
                     <ul className='flex items-center gap-10 text-l py-4'>
                         <li>
-                            <a href="#">ABOUT US</a>
+                            <a href="#about-us">ABOUT US</a>
                         </li>
                         <li>
-                            <a href="#">OUR MISSION</a>
+                            <a href="#our-mission">OUR MISSION</a>
                         </li>
                         <li>
-                            <a href="#">TOOLS</a>
+                            <a href="#tools">TOOLS</a>
                         </li>
                         <li>
-                            <a href="#">REACH OUT</a>
+                            <a href="#contact-us">REACH OUT</a>
                         </li>
                     </ul>
                 </div>

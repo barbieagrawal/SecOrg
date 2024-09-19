@@ -3,7 +3,7 @@ import aboutUsImg from "../../assets/aboutUsImg.jpg"
 
 const AboutUs = () => {
   return (
-    <div className='bg-black text-white pb-12 relative z-50'>
+    <div id="about-us" className='bg-black text-white pb-12 relative z-50'>
         <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
                 <div data-aos="zoom-in" className='flex justify-end px-10'>

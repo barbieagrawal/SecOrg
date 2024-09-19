@@ -34,7 +34,7 @@ const ServiceData = [
 ]
 const Tools = () => {
   return (
-    <section className="bg-black relative z-50">
+    <section id="tools" className="bg-black relative z-50">
       <div className="container">
         <div className="min-h-[400px]">
           <div>
