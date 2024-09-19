@@ -3,7 +3,7 @@ import Logo from '../../assets/logo.png'
 
 const Navbar = () => {
   return (
-    <div data-aos="fade-down" className='fixed top-0 right-0 w-full z-50 bg-black/10 backdrop-blur-sm py-4 sm:py-4'>
+    <div data-aos="fade-down" className='fixed top-0 right-0 w-full z-[99] bg-black/10 backdrop-blur-sm py-4 sm:py-4'>
         <div className="container">
             <div className="flex justify-between items-center">
                 <div className="flex text-white items-center gap-4 font-bold text-2xl">
