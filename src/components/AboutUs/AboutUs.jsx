@@ -6,13 +6,13 @@ const AboutUs = () => {
     <div className='bg-black text-white pb-12 relative z-50'>
         <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
-                <div className='flex justify-end px-10'>
-                    <img src={aboutUsImg} alt="" className='w-full h-full'/>
+                <div data-aos="zoom-in" className='flex justify-end px-10'>
+                    <img src={aboutUsImg} alt="" className='w-full sm:w-[80%] mx-auto max-h-[400px] object-cover'/>
                 </div>
                 <div className='space-y-3 xl:pr-36 p-4 border-r-2 border-b-2 border-r-indigo-800'>
-                    <p className='text-indigo-800 uppercase font-montserrat'>About Us</p>
-                    <h1 className='uppercase text-4xl font-montserrat'>Who Are We?</h1>
-                    <p className='font-anonymouspro'>
+                    <p data-aos="fade-up" className='text-indigo-800 uppercase font-montserrat'>About Us</p>
+                    <h1 data-aos="fade-up" data-aos-delay="300" className='uppercase text-4xl font-montserrat'>Who Are We?</h1>
+                    <p data-aos="fade-up" data-aos-delay="500" className='font-anonymouspro'>
                     We are a team of final-year B.Tech students specializing in Computer Science and Engineering, passionate about cybersecurity and its role in protecting the digital landscape. Through our project, Secorg, we aim to offer organizations an advanced toolkit for tackling key security challenges, with a primary focus on risk assessment and secure credential management. Our mission is to help businesses improve their security posture by providing practical, effective solutions.
                     <br />
                     <br />

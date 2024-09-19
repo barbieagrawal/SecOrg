@@ -6,8 +6,20 @@ import Tools from './components/Tools/Tools'
 import AboutUs from './components/AboutUs/AboutUs'
 import OurMission from './components/OurMission/OurMission'
 import Footer from './components/Footer/Footer'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const App = () => {
+
+  React.useEffect(() => {
+    AOS.init(
+      {
+        duration: 1200,
+        easing: "ease-in-out",
+      }
+    );
+  })
+
   return (
     <div className='bg-black'>
       <div className='h-[700px] relative'>
