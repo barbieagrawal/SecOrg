@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
-import Logo from "../../assets/logo.png";
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import bgVideo from '../assets/cybersec-bg.mp4';
+import Logo from '../assets/logo.png';
 
-Modal.setAppElement("#root"); // Assuming your root element has an ID of 'root'
-// ... existing code ...
+Modal.setAppElement('#root');
 
 const customStyles = {
   overlay: {
@@ -13,14 +13,14 @@ const customStyles = {
     right: 0,
     bottom: 0,
     backgroundColor: "rgba(0, 0, 0, 0.75)",
-    zIndex: 9999, // Increased z-index
+    zIndex: 9999,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
   },
   content: {
     position: "relative",
-    inset: "auto", // This replaces top, left, right, bottom
+    inset: "auto",
     padding: "20px",
     borderRadius: "4px",
     background: "#fff",
@@ -30,7 +30,7 @@ const customStyles = {
   },
 };
 
-const Navbar = ({ isAuthenticated, setIsAuthenticated, isModalOpen, setIsModalOpen }) => {
+const Login = ({ onLogin, isModalOpen, setIsModalOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [twoFactorCode, setTwoFactorCode] = useState("");
@@ -40,7 +40,7 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated, isModalOpen, setIsModalOp
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/auth/login", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated, isModalOpen, setIsModalOp
       return;
     }
     try {
-      const response = await fetch("http://localhost:3000/api/auth/register", {
+      const response = await fetch("/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,73 +79,56 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated, isModalOpen, setIsModalOp
 
   const handle2FAVerification = async () => {
     try {
-      const response = await fetch(
-        "http://localhost:3000/api/auth/verify-2fa",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, twoFactorCode }),
-        }
-      );
+      const response = await fetch("/api/auth/verify-2fa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, twoFactorCode }),
+      });
       const data = await response.json();
-      if (data.success) {
-        setIsAuthenticated(true);
+      console.log('2FA Response:', data);
+      
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        onLogin(true);
         setIsModalOpen(false);
         setAwaiting2FA(false);
+      } else {
+        alert(data.message || 'Invalid 2FA code');
       }
     } catch (error) {
       console.error("Error:", error);
+      alert('Failed to verify 2FA code');
     }
   };
 
   return (
-    <div>
-      <div
-        data-aos="fade-down"
-        className="fixed top-0 right-0 w-full z-[99] bg-black/10 backdrop-blur-sm py-4 sm:py-4"
+    <div className='h-screen bg-black relative'>
+      <video
+        autoPlay
+        loop 
+        muted 
+        className='fixed right-0 top-0 h-full w-full object-cover z-0'
       >
-        <div className="container">
-          <div className="flex justify-between items-center">
-            <div className="flex text-white items-center gap-4 font-bold text-2xl">
-              <img src={Logo} alt="" className="w-12" />
-              <span className="font-blackopsone">SECORG</span>
-            </div>
-            <div className="text-white hidden md:block font-montserrat">
-              <ul className="flex items-center gap-10 text-l py-4">
-                <li>
-                  <a href="#about-us">ABOUT US</a>
-                </li>
-                <li>
-                  <a href="#our-mission">OUR MISSION</a>
-                </li>
-                <li>
-                  <a href="#tools">TOOLS</a>
-                </li>
-                <li>
-                  <a href="#contact-us">REACH OUT</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              {isAuthenticated ? (
-                <button 
-                  onClick={() => setIsAuthenticated(false)} 
-                  className='text-white border-2 font-montserrat border-indigo-900 text-l px-3 py-1 transition duration-200 ease-in-out hover:bg-gray-800 hover:backdrop-blur-md'
-                >
-                  Logout
-                </button>
-              ) : (
-                <button 
-                  onClick={() => setIsModalOpen(true)} 
-                  className='text-white border-2 font-montserrat border-indigo-900 text-l px-3 py-1 transition duration-200 ease-in-out hover:bg-gray-800 hover:backdrop-blur-md'
-                >
-                  Login
-                </button>
-              )}
-            </div>
+        <source src={bgVideo} type='video/mp4'/>
+      </video>
+      
+      <div className="fixed inset-0 bg-black/50 z-10 flex flex-col items-center justify-center">
+        <div className="text-white text-center space-y-8">
+          <div className="flex flex-col items-center gap-4">
+            <img src={Logo} alt="Secorg Logo" className="w-24" />
+            <h1 className="text-4xl font-blackopsone">SECORG</h1>
           </div>
+          <p className="font-montserrat max-w-md mx-auto">
+            Please log in to access the security tools and resources.
+          </p>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-indigo-900 text-white px-8 py-3 rounded font-montserrat hover:bg-indigo-800 transition"
+          >
+            Login to Continue
+          </button>
         </div>
       </div>
 
@@ -225,22 +208,8 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated, isModalOpen, setIsModalOp
           </div>
         )}
       </Modal>
-
-      {!isAuthenticated && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
-          <div className="text-white text-center">
-            <h2 className="text-2xl mb-4">Please log in to access the site</h2>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            >
-              Login
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
 
-export default Navbar;
+export default Login; 
