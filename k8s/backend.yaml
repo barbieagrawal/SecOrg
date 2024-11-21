@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -17,28 +17,26 @@ spec:
         image: anubhav047/secorg-backend:latest
         ports:
         - containerPort: 3000
-        resources:
-          requests:
-            cpu: "200m"
-            memory: "256Mi"
-          limits:
-            cpu: "500m"
-            memory: "512Mi"
-        envFrom:
-        - secretRef:
-            name: backend-secret
         readinessProbe:
           httpGet:
             path: /api/health
             port: 3000
-          initialDelaySeconds: 5
+          initialDelaySeconds: 15
           periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
         livenessProbe:
           httpGet:
             path: /api/health
             port: 3000
           initialDelaySeconds: 15
           periodSeconds: 20
+          timeoutSeconds: 5
+          failureThreshold: 3
+        envFrom:
+        - secretRef:
+            name: backend-secret
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
